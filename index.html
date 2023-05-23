@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Explorer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c9fd215f65.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <div><h1><a href="./index.html" target="_self">Artwork Explorer</a></h1></div>
+    <div><button class="hamburger">&#9776;</button></div>
+        <!-- Hamburger Menu Links -->
+        <div class="menu hide">
+            <ul class="">
+              <a href="./favorites.html"><li>VIEW MOST POPULAR IMAGES</li></a>
+            </ul>
+          </div> 
+          
+</header>
+  
+
+<body id="parent-Element-For-Art-Detail-Sec">
+
+      <!-- old title and play again button -->
+    <div id="title-sec">
+        <button id="Play-again" class="hide">Play again
+        </button>
+        <div><h2 class="hide">Score: </h2></div>
+        
+    </div>
+    
+    <div id="image-sec">
+        <img id="placeholder" src="https://placehold.co/315" alt="Artwork">
+        
+    </div>
+    <div class="Favorite">
+        <form><input 
+            type='text'
+            id="Name"
+            placeholder="Name"/><button id="Favorite-Btn"><i class="fa fa-thumbs-up"></i>Vote</button></form>
+        
+    </div>
+    <div id="buttons-sec">
+        
+        <h2 id="selection">Select the artist that made this work:</h2>
+        <button id="Artist1">Artist1</button>
+        <button id="Artist2">Artist2</button>
+        <button id="Artist3">Artist3</button>
+        <button id="Artist4">Artist4</button>
+    </div>
+    <footer>
+            <!-- <form> <input 
+                type='text'
+                id="email"
+                placeholder="Your e-mail"/><button id="email">Sign up for updates</button></form> -->
+    </footer>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
