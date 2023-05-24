@@ -3,8 +3,46 @@
 function getFavoriteArtwork() {
     axios.get('http://localhost:4004/favorites')
     .then(res => { 
-        console.log(res); 
-    }).catch(err => {console.log(err)})
+        const div = document.getElementById("cardcontainer");
+        
+        const array = res.data; 
+        for (let i = 0; i<array.length; i++){
+                //CREATE A CARD FOR EACH OBJECT IN ARRAY
+                const artDetailCard = document.createElement("div");
+                artDetailCard.id="artDetailCard"; 
+                //DECONSTRUCT ALL KEYS FROM ARRAY
+                const {title, artist,dimensions, medium, time_period, url} = array[i]; 
+                //BUILD IMAGE PART OF CARD
+                const imgDiv = document.createElement("div")
+                imgDiv.id="imageContainer"; 
+                artDetailCard.appendChild(imgDiv)
+                const urlEl = document.createElement("img");
+                imgDiv.appendChild(urlEl)
+                urlEl.setAttribute("src", url);
+                imgDiv.appendChild(urlEl);
+                //BUILD TEXT PART OF CARD
+                const titleEl = document.createElement("h2");
+                titleEl.textContent = title;
+                const artistEl = document.createElement("p");
+                artistEl.textContent = `Artist: ${artist}`;
+                const dimensionsEl = document.createElement("p");
+                dimensionsEl.textContent = `Dimensions: ${dimensions}`;
+                const mediumEl = document.createElement("p");
+                mediumEl.textContent = `Medium: ${medium}`;
+                const timePeriodEl = document.createElement("p");
+                timePeriodEl.textContent = `Time Period: ${time_period}`;
+                
+                artDetailCard.appendChild(titleEl);
+                artDetailCard.appendChild(artistEl);
+                artDetailCard.appendChild(dimensionsEl);
+                artDetailCard.appendChild(mediumEl);
+                artDetailCard.appendChild(timePeriodEl);
+                ;
+                //APPEND CARD TO THE PARENT CONTAINER
+                div.appendChild(artDetailCard);
+        }              
+    
+} ).catch(err => {console.log(err)})
 }
 //MAKE CARDS WITH ALL THE DATA
 // const makeCard = artIdString => {

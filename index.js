@@ -1,7 +1,7 @@
 // const button1 = document.getElementById("Artist1");
 const buttonsSec = document.querySelector('#buttons-sec');
-let countCorrect = 0; 
-let attempts = 0; 
+// const countCorrect = 0; 
+// const attempts = 0; 
 const artDetail = document.createElement("div");
 const parentElementArtDetail = document.getElementById("parent-Element-For-Art-Detail-Sec"); 
 const statusInfo = document.getElementById("title-sec");
@@ -149,13 +149,15 @@ const win = (artist_title, arr) => {
         const clickedButton = event.target;
         if (clickedButton.textContent === artist_title) {
             makeArtDetailPage(arr)
-            countCorrect++; 
+            // countCorrect=countCorrect+1;
+            // attempts=attempts+1; 
             console.log(`win triggered`)
         }
         else { 
             clickedButton.textContent = "Try Again"; 
             clickedButton.id = "Clicked"
             console.log(`clicked id and the "try againtext content was added`)
+            // attempts=attempts+1; 
         }
         
     })
@@ -163,7 +165,7 @@ const win = (artist_title, arr) => {
 const makeArtDetailPage = (arr) =>
 {
     console.log(`called makeartdetail`)
- 
+    
     buttonsSec.classList.add("hide");
     selection.classList.add("hide");
     allButtons.forEach(e =>{e.classList.add("hide")});
@@ -180,10 +182,10 @@ const makeArtDetailPage = (arr) =>
     parentElementArtDetail.appendChild(artDetail);
     const status = document.createElement("h2"); 
     //create what's inside the div, which is a score
-    status.id = "Status";
-    status.innerHTML = `Artists Correctly Guessed:  ${countCorrect} <br> Attempts:  ${attempts} `;
+    // status.id = "Status";
+    // status.innerHTML = `Artists Correctly Guessed:  ${countCorrect} <br> Attempts:  ${attempts} `;
     //then tell the dom to add the div to a specific parent
-    statusInfo.appendChild(status);
+    // statusInfo.appendChild(status);
     //unhide the "play again" button
     playAgainBtn.classList.remove("hide");
     playAgainBtn.addEventListener("click",()=>{

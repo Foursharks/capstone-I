@@ -56,9 +56,12 @@ module.exports = {
     `)
         .then(async (dbRes) => {
             let artIdString = dbRes[0][0].array_agg.map(String).join(',');
-            await axios.get(`https://api.artic.edu/api/v1/artworks/?ids=${artIdString}`)
+            let newObj; 
+        
+            const cardArr = await axios.get(`https://api.artic.edu/api/v1/artworks/?ids=${artIdString}`)
+        
                 .then(res => {
-                    let cardArr =[]; 
+                    let responseArr =[]; 
                     let base_endpoint = res.data.config['iiif_url'];
                     let append='full/843,/0/default.jpg';
                     for(let i = 0; i<res.data.data.length; i++){
@@ -69,7 +72,7 @@ module.exports = {
                         let dimensions = res.data.data[i].dimensions; 
                         let timePeriod = res.data.data[i].style_title; 
                         let artist = res.data.data[i].artist_title;
-                        let newObj = {
+                        newObj = {
                             url: url, 
                             title: title, 
                             artist: artist,
@@ -77,12 +80,12 @@ module.exports = {
                             dimensions: dimensions, 
                             time_period: timePeriod
                         }; 
+                        responseArr.push(newObj); 
                     }
-                    cardArr.push(newObj); 
-                   
+                   return responseArr; 
                 })
                 res.status(200).send(cardArr); 
-            }).catch(err => res.status(500).send(err));
+            }).catch(err => {res.status(500).send(err)});
     }, 
 
     deleteFavorite:(req, res) => {
