@@ -23,8 +23,11 @@ and the styles of that period.
 * Vote for which pieces you like
 * View all liked works
 
-## Screenshot
+## Screenshots
+* Home Page
 <a href="https://ibb.co/YtsmH2f"><img src="https://i.ibb.co/YtsmH2f/Screen-Shot-2023-05-24-at-4-16-48-PM.png" alt="Screen-Shot-2023-05-24-at-4-16-48-PM" border="0"></a>
+* Initial Schema for my DB
+<a href="https://ibb.co/t8rVrnM"><img src="https://i.ibb.co/t8rVrnM/Screen-Shot-2023-05-24-at-4-44-48-PM.png" alt="Screen-Shot-2023-05-24-at-4-44-48-PM" border="0"></a>
 
 
 
